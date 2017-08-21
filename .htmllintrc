@@ -1,0 +1,10 @@
+{
+  "plugins": [],
+  "indent-width": 2,
+  "class-style": "dash",
+  "attr-name-style": false,
+  "tag-bans": ["style", "b"],
+  "img-req-src": false,
+  "spec-char-escape": false,
+  "line-max-len": 120
+}
