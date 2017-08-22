@@ -7,6 +7,11 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer, CounterState } from './counter/counter.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CounterModule } from './counter/counter.module';
+import { CounterEffects } from './counter/counter.effects';
+import { EffectsModule } from '@ngrx/effects';
+import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
+
+import 'rxjs/add/operator/mapTo';
 
 export interface AppState {
   counter: CounterState;
@@ -20,7 +25,12 @@ export interface AppState {
     BrowserModule,
     AppRoutingModule,
     CounterModule,
-    StoreModule.forRoot({ counter: counterReducer }),
+    StoreModule.forRoot({
+      router: routerReducer,
+      counter: counterReducer,
+    }),
+    EffectsModule.forRoot([ CounterEffects ]),
+    StoreRouterConnectingModule,
     StoreDevtoolsModule.instrument(),
   ],
   providers: [],
