@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/briisk-co/angular-starter/branches/master/badge.svg)](https://semaphoreci.com/briisk-co/angular-starter)
+
 # Briisk Angular Starter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) and it meets [Briisk JavaScript Style Guide](https://github.com/briisk/briisk-javascript).
