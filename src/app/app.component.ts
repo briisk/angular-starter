@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpWrapper } from '@briisk/http-wrapper';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'app';
+  constructor(
+    http: HttpWrapper,
+  ) {
+    http.setBaseUrl(environment.URL);
+    http.setHeader('Content-Type', 'application/vnd.api+json');
+  }
 }

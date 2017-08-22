@@ -10,6 +10,7 @@ import { CounterModule } from './counter/counter.module';
 import { CounterEffects } from './counter/counter.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { HttpWrapperModule } from '@briisk/http-wrapper';
 
 import 'rxjs/add/operator/mapTo';
 
@@ -25,6 +26,7 @@ export interface AppState {
     BrowserModule,
     AppRoutingModule,
     CounterModule,
+    HttpWrapperModule,
     StoreModule.forRoot({
       router: routerReducer,
       counter: counterReducer,

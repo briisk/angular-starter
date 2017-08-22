@@ -1,0 +1,7 @@
+export const environment = {
+  production: true,
+  staging: true,
+  dev: false,
+  local: false,
+  URL: '',
+};
