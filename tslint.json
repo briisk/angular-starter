@@ -7,13 +7,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      ["app", "counter"],
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      ["app", "counter"],
       "kebab-case"
     ],
     "use-input-property-decorator": true,

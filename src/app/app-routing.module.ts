@@ -13,5 +13,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
-const a = false;
-if (a === true) { console.log('asd'); }
