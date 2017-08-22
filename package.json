@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "precommit": "ng lint && npm run lint",
+    "precommit": "npm run lint",
     "prepush": "ng test --single-run",
     "init": "./copyEnvFiles.sh",
     "ng": "ng",
