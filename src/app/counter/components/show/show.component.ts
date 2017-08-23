@@ -13,7 +13,7 @@ export class ShowComponent {
   counter: Observable<number>;
 
   constructor(private store: Store<AppState>) {
-    this.counter = store.select(state => state.counter.value);
+    this.counter = store.select(state => state.counter.show.value);
   }
 
   increment() {
