@@ -1,4 +1,5 @@
-import { CounterAction, DECREMENT, INCREMENT, RESET, SET_VALUE } from './counter.actions';
+import { CounterAction, DECREMENT, INCREMENT, RESET, SET_VALUE, SetValuePayload } from './counter.actions';
+import { evolve, dec, assoc } from 'ramda';
 
 export interface CounterState {
   value: number;
@@ -8,21 +9,14 @@ const initialState: CounterState = {
   value: 0,
 };
 
+const actions = {
+  [INCREMENT]: () => (state: CounterState) => ({ ...state, value: state.value + 1 }),
+  [DECREMENT]: () => evolve<CounterState>({ value: dec }),
+  [SET_VALUE]: (payload: SetValuePayload) => assoc('value', payload.value),
+  [RESET]: () => assoc('value', 0),
+};
+
 export function counterReducer(state: CounterState = initialState, action: CounterAction): CounterState {
-  switch (action.type) {
-    case INCREMENT:
-      return { ...state, value: state.value + 1 };
-
-    case DECREMENT:
-      return { ...state, value: state.value - 1 };
-
-    case SET_VALUE:
-      return { ...state, value: action.payload.value };
-
-    case RESET:
-      return { ...state, value: 0 };
-
-    default:
-      return state;
-  }
+  const stateChangingFn = actions[action.type];
+  return !!stateChangingFn ? stateChangingFn(action.payload)(state) : state;
 }
