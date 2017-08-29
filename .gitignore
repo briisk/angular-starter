@@ -29,10 +29,11 @@
 /connect.lock
 /coverage
 /libpeerconnection.log
-npm-debug.log
+npm-debug.log*
 testem.log
 /typings
-yarn-error.log
+yarn-error.log*
+yarn-debug.log*
 
 # e2e
 /e2e/*.js
