@@ -6,6 +6,7 @@
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"
   },
+  "private": false,
   "author": "Daniel Koza <daniel.koza@briisk.co> (https://github.com/dakolech)",
   "scripts": {
     "precommit": "npm run lint",
@@ -22,11 +23,10 @@
     "test:ci": "ng test --single-run",
     "lint": "npm run lint:scss && npm run lint:ts && npm run lint:html",
     "lint:ts": "tslint \"src/**/*.ts\"",
-    "lint:scss": "sass-lint src/",
+    "lint:scss": "sass-lint -c .sass-lint.yml -v",
     "lint:html": "htmllint -- 'src/**/*.html'",
     "e2e": "ng e2e"
   },
-  "private": false,
   "dependencies": {
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.2.4",
