@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../../app.module';
 import { decrementCounter, incrementCounter, resetCounter } from '../../counter.actions';
+import { AppState } from '../../../setup/store.config';
 
 @Component({
   selector: 'counter-show',
