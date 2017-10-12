@@ -11,8 +11,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HttpWrapperModule } from '@briisk/http-wrapper';
 import { localStorageSync } from 'ngrx-store-localstorage';
+import { HttpClientModule } from '@angular/common/http';
 
 import 'rxjs/add/operator/mapTo';
+import { translateConfig } from './setup/translate.config';
+
+
 
 export interface AppState {
   counter: {
@@ -34,6 +38,7 @@ const metaReducers = [ localStorageSyncReducer ];
     BrowserModule,
     AppRoutingModule,
     CounterModule,
+    HttpClientModule,
     HttpWrapperModule,
     StoreModule.forRoot(
       {
@@ -46,6 +51,7 @@ const metaReducers = [ localStorageSyncReducer ];
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule,
     StoreDevtoolsModule.instrument(),
+    translateConfig,
   ],
   providers: [],
   bootstrap: [AppComponent],
