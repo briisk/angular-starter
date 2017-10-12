@@ -1,3 +1,6 @@
+<div translate [translateParams]="{ value: 'world' }">HELLO</div>
+<div [translate]="'HELLO'" [translateParams]="{ value: 'world2' }"></div>
+<div>{{ 'HELLO' | translate: param }}</div>
 <counter-show></counter-show>
 
 <router-outlet></router-outlet>
