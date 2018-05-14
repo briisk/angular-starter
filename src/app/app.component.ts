@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpWrapper } from '@briisk/http-wrapper';
-import { environment } from '../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -14,12 +12,8 @@ export class AppComponent {
   };
 
   constructor(
-    http: HttpWrapper,
     translate: TranslateService,
   ) {
-    http.setBaseUrl(environment.URL);
-    http.setHeader('Content-Type', 'application/vnd.api+json');
-
     translate.setDefaultLang('en');
     translate.use('en');
   }
