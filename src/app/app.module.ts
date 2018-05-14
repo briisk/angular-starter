@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CounterModule } from './counter/counter.module';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { HttpWrapperModule } from '@briisk/http-wrapper';
 import { HttpClientModule } from '@angular/common/http';
 import { translateConfig } from './setup/translate.config';
 import { effectsConfig, storeConfig } from './setup/store.config';
@@ -19,6 +20,7 @@ import { effectsConfig, storeConfig } from './setup/store.config';
     AppRoutingModule,
     CounterModule,
     HttpClientModule,
+    HttpWrapperModule,
     storeConfig,
     effectsConfig,
     StoreRouterConnectingModule,
